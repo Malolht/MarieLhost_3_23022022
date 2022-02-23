@@ -1,0 +1,115 @@
+/*body*/
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/*header*/
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  height: 65px;
+  width: 100%;
+  -webkit-box-shadow: 0px 2px 5px #a19999;
+          box-shadow: 0px 2px 5px #a19999;
+}
+
+header .fas {
+  display: none;
+}
+
+header h1 {
+  font-family: 'Shrikhand', 'sans-serif';
+  font-size: 31px;
+  color: black;
+  margin: 0;
+}
+
+/*location*/
+.loc {
+  background-color: #e6e4e4;
+  height: 50px;
+  margin: 0;
+  margin-left: -25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #424242;
+  font-weight: 500;
+}
+
+.loc i {
+  padding: 10px;
+  margin-right: 6px;
+}
+
+/*explore*/
+.explore {
+  background-color: #f6f6f6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 40px;
+}
+
+.explore__heading {
+  text-align: center;
+  margin: 0;
+  padding: 0 10px;
+}
+
+.explore__text {
+  text-align: center;
+  color: #888484;
+}
+
+.explore__button {
+  -webkit-box-shadow: 0px 8px 12px rgba(48, 46, 46, 0.2);
+          box-shadow: 0px 8px 12px rgba(48, 46, 46, 0.2);
+  margin: 13px 0px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  background: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%);
+  padding: 17px;
+  border-radius: 50px;
+  -webkit-transition: opacity 0.5s, -webkit-box-shadow 0.5s;
+  transition: opacity 0.5s, -webkit-box-shadow 0.5s;
+  transition: opacity 0.5s, box-shadow 0.5s;
+  transition: opacity 0.5s, box-shadow 0.5s, -webkit-box-shadow 0.5s;
+}
+
+.explore__button:hover {
+  opacity: 0.7;
+  -webkit-box-shadow: 0px 8px 9px rgba(87, 85, 85, 0.6);
+          box-shadow: 0px 8px 9px rgba(87, 85, 85, 0.6);
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */

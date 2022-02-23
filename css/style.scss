@@ -1,0 +1,95 @@
+$first: #9356DC;  
+$second: #FF79DA;
+$third: #99E2D0;
+$melted: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%);
+$background: rgb(246, 246, 246);
+
+@mixin flexcenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin button {
+    //opacity: 1;
+    box-shadow: 0px 8px 12px rgba(48, 46, 46, 0.2);
+    margin: 13px 0px;
+    background: $melted;
+    padding: 17px;
+    border-radius: 50px;
+    transition: opacity 0.5s, box-shadow 0.5s; 
+}
+
+@mixin button-hover {
+    opacity: 0.7;
+    box-shadow: 0px 8px 9px rgba(87, 85, 85, 0.6);
+    cursor: pointer;
+}
+
+
+/*body*/
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color : white;
+}
+
+/*header*/
+header { 
+    @include flexcenter();
+    position: relative;
+    height: 65px;
+    width: 100%;
+    box-shadow: 0px 2px 5px rgb(161, 153, 153);
+    .fas{
+        display: none;
+    }
+    h1 {
+    font-family: 'Shrikhand', 'sans-serif';
+    font-size: 31px;
+    color: black;
+    margin: 0;
+    }
+}
+
+/*location*/
+.loc {
+    background-color: rgb(230, 228, 228);
+    height: 50px;
+    margin: 0;
+    margin-left: -25px;
+    @include flexcenter();
+    color: #424242;
+    font-weight: 500;
+    i {
+        padding: 10px;
+        margin-right: 6px;
+    }
+}
+
+/*explore*/
+.explore {
+    background-color: $background;
+    @include flexcenter();
+    flex-direction: column;
+    padding: 40px;
+    &__heading {
+        text-align: center;
+        margin: 0;
+        padding: 0 10px;
+    }
+    &__text {
+        text-align: center;
+        color: rgb(136, 132, 132);
+    }
+    &__button {
+        @include button();
+        &:hover {
+            @include button-hover;
+        }
+    }
+}
