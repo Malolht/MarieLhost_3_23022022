@@ -1,0 +1,129 @@
+/*VARIABLES ET MIXIN*/
+
+$first: #9356DC;  
+$second: #FF79DA;
+$third: #99E2D0;
+$melted: linear-gradient(160deg, #FF79DA, #9356DC);
+$background: rgb(243, 242, 242);
+
+@mixin flexcenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexrow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@mixin button {
+    //opacity: 1;
+    box-shadow: 0px 8px 12px rgba(48, 46, 46, 0.2);
+    margin: 13px 0px;
+    background: $melted;
+    padding: 17px;
+    border-radius: 50px;
+    transition: opacity 0.5s, box-shadow 0.5s; 
+}
+
+@mixin button-hover {
+    opacity: 0.7;
+    box-shadow: 0px 8px 9px rgba(87, 85, 85, 0.6);
+    cursor: pointer;
+}
+
+@mixin heart {
+    font-size: 23px;
+    padding-right: 8px;
+    color: white;
+    -webkit-text-stroke: 1.5px;
+    -webkit-text-stroke-color: black;
+    transition: color 2s;
+}
+
+@mixin heart-hover {
+    color: transparent;
+    background: -webkit-linear-gradient(160deg, #FF79DA, #9356DC);
+    -webkit-background-clip: text;
+    background-clip: text; //à ajouter sinon warning -webkit-background-clip
+    -webkit-text-stroke: 0px;
+}
+
+/*body*/
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color : white;
+}
+
+/*header*/
+header { 
+    @include flexcenter();
+    position: relative;
+    height: 65px;
+    width: 100%;
+    box-shadow: 0px 2px 5px rgb(161, 153, 153);
+    .fas{
+        position: absolute;
+        left: 20px;
+        top:25px;
+        color: black;
+    }
+    h1 {
+    font-family: 'Shrikhand', 'sans-serif';
+    font-size: 31px;
+    margin: 0;
+    }
+}
+
+/*main*/
+.wallpaper img {
+    width: 100%;
+}
+
+.menu {
+    padding: 20px;
+    border-radius: 30px 30px 0 0;
+    background-color: $background;
+    position: relative;
+    top: -50px;
+    &__heading {
+        @include flexrow();
+        height: 50px;
+        & h2 {
+            font-family: 'Shrikhand', 'sans-serif';
+            font-size: 28px;
+            margin-right: 30px;
+        }
+        &__heart {
+            @include heart();
+            &:hover {
+                @include heart-hover();
+            }
+        }
+    }
+    &__preview {
+        display: flex;
+        flex-direction: column;
+        & h3 {
+            text-transform: uppercase;
+            font-weight: 400;
+            height: 30px;
+            width: 45px;
+            border-bottom: 3.5px solid $third;
+        }
+        &__cont {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0px 4px 10px rgb(230, 223, 223);
+            @include flexrow();
+            justify-content: space-around;
+        }
+    }
+}

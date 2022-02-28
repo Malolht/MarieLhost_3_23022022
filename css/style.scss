@@ -4,8 +4,8 @@
 $first: #9356DC;  
 $second: #FF79DA;
 $third: #99E2D0;
-$melted: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%);
-$background: rgb(245, 245, 245);
+$melted: linear-gradient(160deg, #FF79DA, #9356DC);
+$background: rgb(243, 242, 242);
 
 @mixin flexcenter {
     display: flex;
@@ -29,16 +29,22 @@ $background: rgb(245, 245, 245);
     cursor: pointer;
 }
 
-@mixin flag-nouveau {
-            background-color: $third;
-            color: rgb(43, 136, 124);
-            font-weight: 500;
-            font-size: 12px;
-            padding: 7px 13px;
-            border-radius: 3px;
-            width: fit-content;
+@mixin heart {
+    font-size: 20px;
+    padding-right: 8px;
+    color: white;
+    -webkit-text-stroke: 1.5px;
+    -webkit-text-stroke-color: black;
+    transition: color 2s;
 }
 
+@mixin heart-hover {
+    color: transparent;
+    background: -webkit-linear-gradient(160deg, #FF79DA, #9356DC);
+    -webkit-background-clip: text;
+    background-clip: text; //à ajouter sinon warning -webkit-background-clip
+    -webkit-text-stroke: 0px;
+}
 
 /*body*/
 body {
@@ -58,13 +64,9 @@ header {
     height: 65px;
     width: 100%;
     box-shadow: 0px 2px 5px rgb(161, 153, 153);
-    .fas{
-        display: none;
-    }
     h1 {
     font-family: 'Shrikhand', 'sans-serif';
     font-size: 31px;
-    color: black;
     margin: 0;
     }
 }
@@ -167,7 +169,13 @@ header {
         background-color: white;
         box-shadow: 0px 4px 10px rgb(230, 223, 223);
         &__new {
-            @include flag-nouveau();
+            background-color: $third;
+            color: rgb(43, 136, 124);
+            font-weight: 500;
+            font-size: 12px;
+            padding: 7px 13px;
+            border-radius: 3px;
+            width: fit-content;
             position: absolute;
             right: 15px;
             top: 5px;
@@ -193,12 +201,74 @@ header {
             p {
                 margin-top: 5px;
             }
-            &__coeur {
-                font-size: 20px;
-                padding-right: 8px;
+            &__heart {
+                @include heart();
+                &:hover {
+                    @include heart-hover();
+                }
             }
         }
         
     }
 
 }
+
+/**footer**/
+footer {
+    padding: 20px;
+    background-color: rgb(63, 63, 63);
+    & ul {
+        list-style: none;
+        padding-left: 0;
+        font-size: 12px;
+        & li {
+            margin-bottom: 7px;
+        }
+        & .fas {
+            color: white;
+            width: 15px;
+            font-size: 10px;
+        }
+    }
+}
+
+footer h3 {
+    font-family: 'Shrikhand', 'sans-serif';
+    font-size: 18px;
+    font-weight: lighter;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+
+@media all and(min-width:768px) {
+
+    .filter-fonction {
+        flex-direction: row;
+        justify-content: space-around;
+        &__cont{
+            width:300px;
+        }
+    }
+
+    .restau__cont {
+        width: 50%;
+        cursor: pointer;
+    }
+
+    .restau a {
+        display: flex;
+        justify-content: center;
+        cursor: auto;
+    }
+
+    footer {
+        @include flexcenter();
+        & h3 {
+            margin-right: 20px;
+        }
+    }
+}
+
+  
