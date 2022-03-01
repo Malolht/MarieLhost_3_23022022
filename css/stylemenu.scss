@@ -35,9 +35,9 @@ $background: rgb(243, 242, 242);
 }
 
 @mixin heart {
-    font-size: 23px;
+    font-size: 22px;
     padding-right: 8px;
-    color: white;
+    color: $background;
     -webkit-text-stroke: 1.5px;
     -webkit-text-stroke-color: black;
     transition: color 2s;
@@ -50,6 +50,23 @@ $background: rgb(243, 242, 242);
     background-clip: text; //à ajouter sinon warning -webkit-background-clip
     -webkit-text-stroke: 0px;
 }
+
+
+/*ANIMATIONS*/
+@keyframes gradual-opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
 
 /*body*/
 body {
@@ -119,11 +136,84 @@ header {
             border-bottom: 3.5px solid $third;
         }
         &__cont {
+            animation: gradual-opacity 2s backwards;
+            position: relative;
+            cursor: pointer;
             background-color: white;
+            @include flexrow();
+            justify-content: space-between;
             border-radius: 20px;
             box-shadow: 0px 4px 10px rgb(230, 223, 223);
-            @include flexrow();
-            justify-content: space-around;
+            padding: 0 15px;
+            &__legend {
+                width: 100%;
+            }
+            .circle {
+                background-color: $third;
+                border-radius: 0 20px 20px 0;
+                height: 100%;
+                width: 60px;
+                position: absolute;
+                right: 0;
+                transform: scaleX(0);
+                transform-origin: right;
+                transition: transform 0.3s linear;
+            }
+            .fas {
+                color: white;
+                font-size: 20px;
+                padding-top: 45%;
+                padding-left: 30%;
+            }
+            h4 {
+                margin-bottom: 5px;
+                margin-top: 14px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden; 
+            }
+            .subtitle {
+                @include flexrow();
+                justify-content: space-between;
+                margin-bottom: 14px;
+                & p {
+                    margin: 0;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden; 
+                }
+                
+            }
+            & .price {
+                font-weight: bold;
+                font-size: 14px;
+                padding-right: 0;
+                transition: padding-right 0.3s linear;
+            }
+            &:hover .circle {
+                display: flex;
+                transform: scaleX(1);
+                transform-origin: right;
+                transition: transform 0.3s linear;
+            }
+            &:hover .price {
+                padding-right: 60px;
+                transition: padding-right 0.3s linear;
+            }
         }
     }
+}
+
+
+
+.menu__preview__cont--entrées {
+    animation-delay: 100ms;
+}
+
+.menu__preview__cont--plats {
+    animation-delay: 300ms;
+}
+
+.menu__preview__cont--desserts {
+    animation-delay: 500ms;
 }
