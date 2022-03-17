@@ -91,7 +91,7 @@ header h1 {
 .explore__button {
   -webkit-box-shadow: 0px 8px 12px rgba(48, 46, 46, 0.2);
           box-shadow: 0px 8px 12px rgba(48, 46, 46, 0.2);
-  margin: 13px 0px;
+  margin: 13px 0;
   background: linear-gradient(160deg, #FF79DA, #9356DC);
   padding: 17px;
   border-radius: 50px;
@@ -270,8 +270,8 @@ header h1 {
   color: white;
   -webkit-text-stroke: 1.5px;
   -webkit-text-stroke-color: black;
-  -webkit-transition: color 2s;
-  transition: color 2s;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
 }
 
 .restau__cont__legend__heart:hover {
@@ -280,6 +280,7 @@ header h1 {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-stroke: 0px;
+  cursor: pointer;
 }
 
 /**footer**/

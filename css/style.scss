@@ -16,11 +16,12 @@ $background: rgb(243, 242, 242);
 @mixin button {
     //opacity: 1;
     box-shadow: 0px 8px 12px rgba(48, 46, 46, 0.2);
-    margin: 13px 0px;
+    margin: 13px 0;
     background: $melted;
     padding: 17px;
     border-radius: 50px;
-    transition: opacity 0.5s, box-shadow 0.5s; 
+    transition: opacity 0.5s, box-shadow 0.5s;
+     
 }
 
 @mixin button-hover {
@@ -35,7 +36,7 @@ $background: rgb(243, 242, 242);
     color: white;
     -webkit-text-stroke: 1.5px;
     -webkit-text-stroke-color: black;
-    transition: color 2s;
+    transition: 1.5s;
 }
 
 @mixin heart-hover {
@@ -44,6 +45,7 @@ $background: rgb(243, 242, 242);
     -webkit-background-clip: text;
     background-clip: text; //à ajouter sinon warning -webkit-background-clip
     -webkit-text-stroke: 0px;
+    cursor: pointer;
 }
 
 /*body*/
