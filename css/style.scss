@@ -4,7 +4,7 @@
 $first: #9356DC;  
 $second: #FF79DA;
 $third: #99E2D0;
-$melted: linear-gradient(160deg, #FF79DA, #9356DC);
+$melted: linear-gradient(175deg, #FF79DA, #9356DC);
 $background: rgb(243, 242, 242);
 
 @mixin flexcenter {
@@ -21,6 +21,7 @@ $background: rgb(243, 242, 242);
     padding: 17px;
     border-radius: 50px;
     transition: opacity 0.5s, box-shadow 0.5s;
+    text-align: center;
      
 }
 
@@ -47,6 +48,117 @@ $background: rgb(243, 242, 242);
     -webkit-text-stroke: 0px;
     cursor: pointer;
 }
+
+
+@keyframes loading-bar {
+    0% {
+        transform:scaleY(1) translateX(-100px) ;
+    }
+
+    100% {
+        transform:scaleY(0.3) translateX(0) rotateY(360deg);
+        opacity: 0.3;
+        
+    }
+}
+
+@keyframes loading-text { 
+    0% {
+        transform: translateX(-900px) ;
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform:translateX(900px) ; 
+    }
+
+}
+
+@keyframes display-loader {
+    0% {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    99% {
+        opacity: 1;
+    }
+    
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/*loader*/
+
+
+
+.load {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 8, 8, 0.897);
+    z-index: 1;
+    display: flex;
+    justify-content: space-evenly;
+    visibility: hidden;
+    animation: display-loader 5s;
+    &__text {
+        color: #99E2D0;
+        font-size: 30px;
+        font-family: 'Shrikhand', 'sans-serif';
+        animation: loading-text 2.5s infinite both;
+        position:absolute;
+        top: 70px;
+    }
+    &__bar {
+        position: relative;
+        margin-top: auto;
+        margin-bottom: auto;
+        height: 150px;
+        width: 12px;
+        border-radius: 100px;
+        animation: loading-bar 1.5s infinite backwards;
+        animation-direction: alternate;
+        &--1, &--2{
+            background-color: #9356DC;
+        }
+        &--3, &--4 {
+            background-color: #99E2D0;
+        }
+        &--5, &--6 {
+            background-color: #FF79DA;
+        }
+    }
+}
+
+.load__bar--1 {
+    animation-delay: 200ms;
+}
+.load__bar--2 {
+    animation-delay: 400ms;
+}
+.load__bar--3 {
+    animation-delay: 600ms;
+}
+.load__bar--4 {
+    animation-delay: 800ms;
+}
+.load__bar--5 {
+    animation-delay: 1000ms;
+}
+.load__bar--6 {
+    animation-delay: 1200ms;
+}
+
+
+
+
+
 
 /*body*/
 body {
@@ -112,18 +224,17 @@ header {
 }
 
 /*filter*/
-#filter {
-    padding: 20px 20px;
-}
 
-.filter-fonction {
+.filter {
+    padding: 20px 20px;
+ &__fonction {
     @include flexcenter();
     flex-direction: column;
     &__cont {
         display: flex;
         flex-direction: row;
         width: 100%;
-        height: 72px;
+        height: 62px;
         background-color: $background;
         align-items: center;
         margin-bottom: 25px;
@@ -153,6 +264,7 @@ header {
         color: white;
         margin-left: -10px;
     }
+  }
 }
 
 .restau {
