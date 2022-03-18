@@ -1,23 +1,23 @@
 /*VARIABLES ET MIXIN*/
 @-webkit-keyframes loading-bar {
   0% {
-    -webkit-transform: scaleY(1) translateX(-100px);
-            transform: scaleY(1) translateX(-100px);
+    -webkit-transform: scaleY(1) translateY(100px);
+            transform: scaleY(1) translateY(100px);
   }
   100% {
-    -webkit-transform: scaleY(0.3) translateX(0) rotateY(360deg);
-            transform: scaleY(0.3) translateX(0) rotateY(360deg);
+    -webkit-transform: scaleY(0.3) translateY(0) rotateY(360deg);
+            transform: scaleY(0.3) translateY(0) rotateY(360deg);
     opacity: 0.3;
   }
 }
 @keyframes loading-bar {
   0% {
-    -webkit-transform: scaleY(1) translateX(-100px);
-            transform: scaleY(1) translateX(-100px);
+    -webkit-transform: scaleY(1) translateY(100px);
+            transform: scaleY(1) translateY(100px);
   }
   100% {
-    -webkit-transform: scaleY(0.3) translateX(0) rotateY(360deg);
-            transform: scaleY(0.3) translateX(0) rotateY(360deg);
+    -webkit-transform: scaleY(0.3) translateY(0) rotateY(360deg);
+            transform: scaleY(0.3) translateY(0) rotateY(360deg);
     opacity: 0.3;
   }
 }
@@ -102,8 +102,8 @@
   color: #99E2D0;
   font-size: 30px;
   font-family: 'Shrikhand', 'sans-serif';
-  -webkit-animation: loading-text 2.5s infinite both;
-          animation: loading-text 2.5s infinite both;
+  -webkit-animation: loading-text 2.3s infinite both;
+          animation: loading-text 2.3s infinite both;
   position: absolute;
   top: 70px;
 }
@@ -115,8 +115,8 @@
   height: 150px;
   width: 12px;
   border-radius: 100px;
-  -webkit-animation: loading-bar 1.5s infinite backwards;
-          animation: loading-bar 1.5s infinite backwards;
+  -webkit-animation: loading-bar 1.4s infinite backwards;
+          animation: loading-bar 1.4s infinite backwards;
   -webkit-animation-direction: alternate;
           animation-direction: alternate;
 }

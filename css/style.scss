@@ -52,11 +52,11 @@ $background: rgb(243, 242, 242);
 
 @keyframes loading-bar {
     0% {
-        transform:scaleY(1) translateX(-100px) ;
+        transform:scaleY(1) translateY(100px) ;
     }
 
     100% {
-        transform:scaleY(0.3) translateX(0) rotateY(360deg);
+        transform:scaleY(0.3) translateY(0) rotateY(360deg);
         opacity: 0.3;
         
     }
@@ -94,9 +94,6 @@ $background: rgb(243, 242, 242);
 }
 
 /*loader*/
-
-
-
 .load {
     position: fixed;
     width: 100%;
@@ -111,7 +108,7 @@ $background: rgb(243, 242, 242);
         color: #99E2D0;
         font-size: 30px;
         font-family: 'Shrikhand', 'sans-serif';
-        animation: loading-text 2.5s infinite both;
+        animation: loading-text 2.3s infinite both;
         position:absolute;
         top: 70px;
     }
@@ -122,7 +119,7 @@ $background: rgb(243, 242, 242);
         height: 150px;
         width: 12px;
         border-radius: 100px;
-        animation: loading-bar 1.5s infinite backwards;
+        animation: loading-bar 1.4s infinite backwards;
         animation-direction: alternate;
         &--1, &--2{
             background-color: #9356DC;
@@ -154,11 +151,6 @@ $background: rgb(243, 242, 242);
 .load__bar--6 {
     animation-delay: 1200ms;
 }
-
-
-
-
-
 
 /*body*/
 body {
