@@ -52,29 +52,14 @@ $background: rgb(243, 242, 242);
 
 @keyframes loading-bar {
     0% {
-        transform:scaleY(1) translateY(100px) ;
+        transform:scaleY(1) scaleX(1);
     }
+
 
     100% {
-        transform:scaleY(0.3) translateY(0) rotateY(360deg);
-        opacity: 0.3;
-        
+        transform:scaleY(0.3) scaleX(0.3) rotateY(360deg);
+        opacity: 0.5;
     }
-}
-
-@keyframes loading-text { 
-    0% {
-        transform: translateX(-900px) ;
-    }
-
-    50% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform:translateX(900px) ; 
-    }
-
 }
 
 @keyframes display-loader {
@@ -93,6 +78,32 @@ $background: rgb(243, 242, 242);
     }
 }
 
+@keyframes loading-text { 
+    0% {
+        transform: translateX(-900px) ;
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform:translateX(900px) ; 
+    }
+
+}
+
+@keyframes loading-logo { 
+    0% {
+        transform: rotate(0) ;
+    }
+
+    100% {
+        transform:rotate(360deg) ; 
+    }
+
+}
+
 /*loader*/
 .load {
     position: fixed;
@@ -103,14 +114,34 @@ $background: rgb(243, 242, 242);
     display: flex;
     justify-content: space-evenly;
     visibility: hidden;
-    animation: display-loader 5s;
+    animation: display-loader 3s;
     &__text {
         color: #99E2D0;
         font-size: 30px;
         font-family: 'Shrikhand', 'sans-serif';
-        animation: loading-text 2.3s infinite both;
+        animation: loading-text 2s infinite both;
         position:absolute;
         top: 70px;
+    }
+    &__logo {
+        background: $melted;
+        width: 20px;
+        height: 20px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 5px;
+        position:absolute;
+        bottom: 70px;
+        right: 50px;
+        animation: loading-logo 1s infinite ease-in-out;
+        &__center {
+            background-color: white;
+            width: 5px;
+            height: 5px;
+            border-radius: 7px;
+        }
     }
     &__bar {
         position: relative;
@@ -119,7 +150,7 @@ $background: rgb(243, 242, 242);
         height: 150px;
         width: 12px;
         border-radius: 100px;
-        animation: loading-bar 1.4s infinite backwards;
+        animation: loading-bar 1s infinite backwards;
         animation-direction: alternate;
         &--1, &--2{
             background-color: #9356DC;

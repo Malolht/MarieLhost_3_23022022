@@ -102,6 +102,9 @@ header {
 /*main*/
 .wallpaper img {
     width: 100%;
+    height: 300px;
+    object-fit: cover;
+    
 }
 
 .menu {
@@ -276,6 +279,6 @@ footer h3 {
     .wallpaper {
         height: 300px;
     }
-
 }
+
 
