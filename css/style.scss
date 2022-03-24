@@ -22,7 +22,6 @@ $background: rgb(243, 242, 242);
     border-radius: 50px;
     transition: opacity 0.5s, box-shadow 0.5s;
     text-align: center;
-     
 }
 
 @mixin button-hover {
@@ -65,15 +64,14 @@ $background: rgb(243, 242, 242);
 @keyframes display-loader {
     0% {
         visibility: visible;
-        opacity: 1;
     }
 
-    99% {
-        opacity: 1;
+    90% {
+        opacity: 90%;
     }
-    
+
     100% {
-        opacity: 0;
+        opacity: 0%;
         visibility: hidden;
     }
 }
@@ -90,7 +88,6 @@ $background: rgb(243, 242, 242);
     100% {
         transform:translateX(900px) ; 
     }
-
 }
 
 @keyframes loading-logo { 
@@ -101,7 +98,6 @@ $background: rgb(243, 242, 242);
     100% {
         transform:rotate(360deg) ; 
     }
-
 }
 
 /*loader*/

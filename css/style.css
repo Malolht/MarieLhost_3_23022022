@@ -25,13 +25,12 @@
 @-webkit-keyframes display-loader {
   0% {
     visibility: visible;
-    opacity: 1;
   }
-  99% {
-    opacity: 1;
+  90% {
+    opacity: 90%;
   }
   100% {
-    opacity: 0;
+    opacity: 0%;
     visibility: hidden;
   }
 }
@@ -39,13 +38,12 @@
 @keyframes display-loader {
   0% {
     visibility: visible;
-    opacity: 1;
   }
-  99% {
-    opacity: 1;
+  90% {
+    opacity: 90%;
   }
   100% {
-    opacity: 0;
+    opacity: 0%;
     visibility: hidden;
   }
 }
